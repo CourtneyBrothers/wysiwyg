@@ -85,5 +85,6 @@ for (i=0; i < arrayOfFamousPeople.length; i++){
    container.appendChild(card);
    card.innerHTML = "this card here";
    console.log("here");
+
    };
 

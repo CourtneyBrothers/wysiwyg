@@ -1,0 +1,6 @@
+#card:nth-child(even) {
+    background: lightblue;
+}
+#card:nth-child(odd){
+    background: lightyellow;
+}
