@@ -114,5 +114,13 @@ document.getElementById("container").addEventListener("click", ()=> {for (i=0; i
         biography.innerHTML = input.value;
         
     }
-    
 }); 
+
+input.addEventListener("keypress", (e)=> {
+    const key = e.which || e.keyCode;
+    if (key === 13){
+        input.value = "";
+        console.log("keypress running");
+        };
+    }
+);
