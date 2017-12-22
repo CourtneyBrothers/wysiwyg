@@ -74,6 +74,8 @@ let arrayOfFamousPeople = [
 let mainDiv = document.getElementById("main-div");
 let textInput = document.createElement("input");
 textInput.type = "text";
+textInput.id = "input";
+
 mainDiv.appendChild(textInput);
 
 let container = document.getElementById("container");
@@ -84,7 +86,7 @@ for (i=0; i < arrayOfFamousPeople.length; i++){
    card.classList.add ("card");
 
    container.appendChild(card);
-   card.innerHTML = `<h1>${arrayOfFamousPeople[i].title}</h1><h2>${arrayOfFamousPeople[i].name}</h2><section>${arrayOfFamousPeople[i].bio}<img src = ${arrayOfFamousPeople[i].image}></section><footer>${arrayOfFamousPeople[i].lifespan.birth}-${arrayOfFamousPeople[i].lifespan.death}</footer>`;
+   card.innerHTML = `<h1>${arrayOfFamousPeople[i].title}</h1><h2>${arrayOfFamousPeople[i].name}</h2><section id="bio" class="bios">${arrayOfFamousPeople[i].bio}<img src = ${arrayOfFamousPeople[i].image}></section><footer>${arrayOfFamousPeople[i].lifespan.birth}-${arrayOfFamousPeople[i].lifespan.death}</footer>`;
    console.log("here");
    
    
@@ -97,7 +99,19 @@ document.getElementById("container").addEventListener("click", ()=> {for (i=0; i
     console.log("cards",cards);
     console.log("cards length",cards.length);
         event.target.style.border ="4px dotted black";
-        document.getElementById("main-div").focus();  
+         
     }
-
+    let input = document.getElementById("input");
+    console.log("input", input);
+    input.focus(); 
+    // 
+    bioSection = event.target.closest("div");
+    biography = bioSection.querySelector(".bios");
+    console.log("biography", biography);
+    console.log("array from",Array.from(biography));
+    console.log("bio inner html", biography.innerText);
+    input.onkeyup = () => { 
+        biography.innerHTML = input.value;
+    }
+    
 }); 
