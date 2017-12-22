@@ -86,7 +86,7 @@ for (i=0; i < arrayOfFamousPeople.length; i++){
    card.classList.add ("card");
 
    container.appendChild(card);
-   card.innerHTML = `<h1>${arrayOfFamousPeople[i].title}</h1><h2>${arrayOfFamousPeople[i].name}</h2><section id="bio" class="bios">${arrayOfFamousPeople[i].bio}<img src = ${arrayOfFamousPeople[i].image}></section><footer>${arrayOfFamousPeople[i].lifespan.birth}-${arrayOfFamousPeople[i].lifespan.death}</footer>`;
+   card.innerHTML = `<h1>${arrayOfFamousPeople[i].title}</h1><h2>${arrayOfFamousPeople[i].name}</h2><section id="bio" class="bios">${arrayOfFamousPeople[i].bio}</section><img src = ${arrayOfFamousPeople[i].image}><footer>${arrayOfFamousPeople[i].lifespan.birth}-${arrayOfFamousPeople[i].lifespan.death}</footer>`;
    console.log("here");
    
    
@@ -112,6 +112,15 @@ document.getElementById("container").addEventListener("click", ()=> {for (i=0; i
     console.log("bio inner html", biography.innerText);
     input.onkeyup = () => { 
         biography.innerHTML = input.value;
+        
     }
-    
 }); 
+
+input.addEventListener("keypress", (e)=> {
+    const key = e.which || e.keyCode;
+    if (key === 13){
+        input.value = "";
+        console.log("keypress running");
+        };
+    }
+);
