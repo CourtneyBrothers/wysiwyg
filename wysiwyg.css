@@ -1,11 +1,9 @@
-#container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
+
+
 .card:nth-child(even) {
     background: lightblue;
 }
 .card:nth-child(odd){
     background: lightyellow;
 }
+

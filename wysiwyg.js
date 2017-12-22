@@ -87,11 +87,15 @@ for (i=0; i < arrayOfFamousPeople.length; i++){
    card.innerHTML = `<h1>${arrayOfFamousPeople[i].title}</h1><h2>${arrayOfFamousPeople[i].name}</h2><section>${arrayOfFamousPeople[i].bio}<img src = ${arrayOfFamousPeople[i].image}></section><footer>${arrayOfFamousPeople[i].lifespan.birth}-${arrayOfFamousPeople[i].lifespan.death}</footer>`;
    console.log("here");
    
+   
    };
    
 cards = document.getElementsByClassName("card");
 console.log(cards);
-for (i=0; i < cards.length; i++){
-    console.log(cards.length);
-    card.addEventListener("click", () => card.style.border = "1px dotted black");
-};
+
+document.getElementById("container").addEventListener("click", ()=> {for (i=0; i < cards.length; i++){
+    console.log("cards",)
+    console.log("cards length",cards.length);
+    
+    }
+}); 
