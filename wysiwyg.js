@@ -96,6 +96,8 @@ console.log(cards);
 document.getElementById("container").addEventListener("click", ()=> {for (i=0; i < cards.length; i++){
     console.log("cards",cards);
     console.log("cards length",cards.length);
-        event.target.style.border ="4px dotted black";  
+        event.target.style.border ="4px dotted black";
+        document.getElementById("main-div").focus();  
     }
+
 }); 
